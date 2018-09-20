@@ -6,6 +6,7 @@
 Status](https://travis-ci.com/sgillies/jsonseq.svg?branch=master)](https://travis-ci.com/sgillies/jsonseq)
 [![Coverage
 Status](https://coveralls.io/repos/github/sgillies/jsonseq/badge.svg?branch=master)](https://coveralls.io/github/sgillies/jsonseq?branch=master)
+[![Documentation Status](https://readthedocs.org/projects/jsonseq/badge/?version=latest)](https://jsonseq.readthedocs.io/en/latest/?badge=latest)
 
 ## Usage
 
