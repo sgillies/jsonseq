@@ -1,6 +1,11 @@
 # jsonseq
 
-RFC 7464 JSON Text Sequence encoding and decoding for Python.
+[RFC 7464 JSON Text Sequences](https://tools.ietf.org/html/rfc7464) encoding and decoding for Python.
+
+[![Build
+Status](https://travis-ci.com/sgillies/jsonseq.svg?branch=master)](https://travis-ci.com/sgillies/jsonseq)
+[![Coverage
+Status](https://coveralls.io/repos/github/sgillies/jsonseq/badge.svg?branch=master)](https://coveralls.io/github/sgillies/jsonseq?branch=master)
 
 ## Usage
 
