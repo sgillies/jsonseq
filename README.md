@@ -64,3 +64,40 @@ the `iterencode()` method.
 '}'
 '\n'
 ```
+
+You can use either `encode()` or `iterencode()` to copy JSON text sequences to a file.
+
+```python
+with open("/tmp/example.jsons", "w") as f:
+    for chunk in JSONSeqEncoder(with_rs=True, indent=2).iterencode(({"a": i, "b": i} for i in range(3))):
+        f.write(chunk)
+```
+
+There is no need to add a newline when calling the file's `write()` method.
+JSONSeqEncoder ensures that it's already there where it needs to be.
+
+The `jsonseq.decode.JSONSeqDecoder` class takes streams of JSON texts
+sandwiched between the optional ASCII record separator (RS, `\x1e`) and
+a newline (`\n`) and yields decoded Python objects.
+
+```python
+>>> stream = ['\x1e', '{', '"a"', ': ', '0', '}', '\n', '\x1e', '{', '"a"', ': ', '1', '}', '\n', '\x1e', '{', '"a"', ': ', '2', '}', '\n']
+>>> for obj in JSONSeqDecoder().decode(stream):
+...     print(repr(obj))
+...
+{'a': 0}
+{'a': 1}
+{'a': 2}
+```
+
+Objects can be read from a file in the same way.
+
+```python
+>>> with open("/tmp/example.jsons") as f:
+...     for obj in JSONSeqDecoder().decode(f):
+...         print(repr(obj))
+...
+{'a': 0, 'b': 0}
+{'a': 1, 'b': 1}
+{'a': 2, 'b': 2}
+````
