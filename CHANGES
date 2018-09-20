@@ -6,4 +6,9 @@ Changes
 
 Initial release.
 
+Features:
+
+- A JSONSeqDecoder class with an API similar to json.JSONDecoder.
+- A JSONSeqEncoder class similar to json.JSONEncoder.
+
 
